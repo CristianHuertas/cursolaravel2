@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Path: resources\css\commom.css */
+
+@import 'commom.css';
