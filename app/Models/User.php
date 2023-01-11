@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Post;
 
 class User extends Authenticatable
 {
@@ -62,6 +63,7 @@ class User extends Authenticatable
     // Relacion uno a muchos
     public function posts()
     {
-        return $this->hasMany(Post::class);
+        // return $this->hasMany(Post::class);
+        return $this->hasMay(Post::class, 'user_id', 'id');
     }
 }

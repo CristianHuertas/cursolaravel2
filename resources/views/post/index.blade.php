@@ -8,15 +8,16 @@
 
             @foreach ($posts as $post)
 
-                {{-- {{ $post->id }} --}}
+            {{-- se debe llamar al metodo --}}
+                {{ $post->user->id }} 
 
                 <article class="w-full h-40 bg-cover bg-center @if($loop->first) col-span-2 @endif" style="background-image: blue ">
                     <div class="w-full h-full px-8 flex flez-col justify-center">
                         <div>
-                            {{ $post->tags }}
+                            {{-- {{ $post->users->user_id }} --}}
                         </div>
                         <h1 class="text-4xl text-blue-500 leading-8 font-bold">
-                            <a href="">{{ $post->name }}</a>
+                            <a href=""></a>
                         </h1>
 
 

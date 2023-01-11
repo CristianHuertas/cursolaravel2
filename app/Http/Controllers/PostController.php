@@ -17,6 +17,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = DB::select('SELECT * FROM posts WHERE status = 2');
+        $posts= Post::all();
         return view('post.index', compact('posts'));
     }
 
