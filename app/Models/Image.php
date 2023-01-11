@@ -17,7 +17,7 @@ class Image extends Model
     // }
 
 
-    public function imageable()
+    public function post()
     {
         return $this->hasOne(Post::class, 'imageable');
     } 

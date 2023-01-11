@@ -44,7 +44,7 @@ class Post extends Model
 
    public function image()
     {
-        return $this->hasOne(Image::class, 'imageable');
+        return $this->hasOne(Image::class, 'id', 'images_id');
     } 
 
 

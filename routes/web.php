@@ -23,8 +23,20 @@ use Illuminate\Support\Facades\Route;
     Route::get('/', 'index')->name('cursos.index');
 }); */
 
-Route::get('/', [PostController::class, 'index'])->name('posts.index');
+// Route::get('/', [PostController::class, 'index'])->name('posts.index');
+// Route::get('posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
+
+
+Route::controller(PostController::class)->group(function () {
+    Route::get('/', 'index')->name('posts.index');
+    Route::get('posts/{post}', 'show')->name('posts.show');
+    Route::get('category/{category}', 'category')->name('posts.category');
+    Route::get('tag/{tag}', 'tag')->name('posts.tag');
+
+
+
+ });
 
 Route::middleware([
     'auth:sanctum',

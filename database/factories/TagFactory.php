@@ -19,10 +19,11 @@ class TagFactory extends Factory
     public function definition()
     {
 
-        $name= $this->faker->unique()->name();
+        $name= $this->faker->unique()->firstName();
         return [
             'name' => $name,
             'slug' => Str::slug($name),
+            'color' => $this->faker->randomElement(['red', 'green', 'blue', 'yellow', 'pink', 'purple', 'indigo', 'gray']),
         ];
     }
 }
