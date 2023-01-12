@@ -8,6 +8,16 @@
 
 @section('content')
     <div class="card">
+        @if (session('info'))
+            <div class="alert alert-success">
+                <strong>{{ session('info') }}</strong>
+            </div>
+        @endif
+        @if (session('danger'))
+            <div class="alert alert-danger">
+                <strong>{{ session('danger') }}</strong>
+            </div>
+        @endif
         <div class="card-header">
             <a href="{{ route('admin.tags.create') }}" class="btn btn-secondary">Crear Etiqueta</a>
         </div>
@@ -41,5 +51,4 @@
             </table>
         </div>
 
-@stop
-
+    @stop

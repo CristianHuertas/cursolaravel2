@@ -14,6 +14,9 @@ class Post extends Model
 
     protected $table = 'posts';
 
+    //camos que no se pueden asignar de manera masiva
+    protected $guarded = ['id', 'created_at', 'updated_at'];
+
     // Relacion uno a muchos inversa user
     public function user()
     {

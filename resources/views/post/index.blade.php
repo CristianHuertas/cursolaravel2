@@ -7,8 +7,11 @@
 
 
             @foreach ($posts as $post)
-                <article class="w-full h-40 bg-cover bg-center @if ($loop->first) md:col-span-2 @endif"
-                    style="background-image: blue ">
+                <article class="bg-gray-300 w-full h-80 bg-cover bg-center @if ($loop->first) md:col-span-2 @endif"
+                    style="background-image: url(@if($post->image) {{Storage::url($post->image->url)}}) @else https://cdn.pixabay.com/photo/2015/05/28/23/12/auto-788747_960_720.jpg @endif ">
+
+                    {{-- <article class="bg-gray-300 w-full h-40 bg-cover bg-center @if ($loop->first) md:col-span-2 @endif"
+                        style="bg-red-500 background-image: url(@if($post->image) {{Storage::url($post->image->url)}}) @else https://ugc.kn3.net/i/760x/http://unloadings.files.wordpress.com/2009/05/tunning-tuning-autos-deportivos-091.jpg @endif "> --}}
                     <div class="w-full h-full px-8 flex flez-col justify-center">
                         <div>
                             @foreach ($post->tags as $tag)
